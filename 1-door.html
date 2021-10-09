@@ -38,11 +38,12 @@ z-index: 1;'>
 </script>
 
 <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
-loading-screen="dotsColor: black; backgroundColor: #BFEAFF">
+loading-screen="dotsColor: black; backgroundColor: #FFBFBF">
 
   <a-assets>
     <img id="sky" src="images/door.jpg" alt="background">
     <img id="home" src="images/backhome.png" alt="">
+    <img id="circle" src="images/circle.png" alt="">
   </a-assets>
 
   <a-sky src="#sky" rotation="0 180 0"></a-sky>
@@ -57,14 +58,14 @@ loading-screen="dotsColor: black; backgroundColor: #BFEAFF">
       weblink="url: index.html">
     </a-image>
 
-    <a-circle id="2-0" class="clickable"
-       color="red" radius="1" opacity="0.5"
+    <a-image id="2-0" class="clickable"
+       src="#circle" width="1.25" height="1.25" opacity="1"
        animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
        animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
        position="6 0 -0.2"
        rotation="-90 0 0"
        weblink="url: 2-0.html">
-     </a-circle>
+     </a-image>
 
 </a-scene>
 
