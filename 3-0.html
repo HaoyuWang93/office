@@ -46,23 +46,23 @@ loading-screen="dotsColor: black; backgroundColor: #BFEAFF">
 
   <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
-    <a-ring id="3-1" class="clickable"
-       color="white" radius-inner="0.2" radius-outer="0.4"
-       animation__flash="property: opacity; from: 0.8; to: 0; dur: 600; dir: alternate; loop: true"
-       position="-2.6 0 -2.8"
-       rotation="-90 0 0"
-       opacity=0.8
-       weblink="url: 3-1.html">
-     </a-ring>
+    <a-circle id="3-1" class="clickable"
+    color="red" radius="0.5" opacity="0.5"
+    animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+    animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+    position="-2.6 0 -2.8"
+    rotation="-90 0 0"
+    weblink="url: 3-1.html">
+     </a-circle>
 
-     <a-ring id="2" class="clickable"
-        color="white" radius-inner="0.4" radius-outer="0.8"
-        animation__flash="property: opacity; from: 0.8; to: 0; dur: 600; dir: alternate; loop: true"
-        position="6 0 1"
-        rotation="-90 0 0"
-        opacity=0.8
-        weblink="url: 2-0.html">
-      </a-ring>
+     <a-circle id="2" class="clickable"
+     color="red" radius="1" opacity="0.5"
+     animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+     position="6 0 1"
+     rotation="-90 0 0"
+     weblink="url: 2-0.html">
+      </a-circle>
 
 </a-scene>
 
