@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MIA-203?/??/??</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<script>
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: black; backgroundColor: #BFEAFF">
+
+  <a-assets>
+    <img id="sky" src="images/home.jpg" alt="background">
+    <img id="exit" src="images/exit.png" alt="next page">
+  </a-assets>
+
+  <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
+   <a-image id="out" class="clickable"
+      src= "#exit"
+      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+      width="0.3" height="0.3"
+      position="2 1.55 -0.22"
+      rotation="0 -90 0"
+      opacity=0.8
+      weblink="url: 1-door.html">
+    </a-image>
+
+</a-scene>
+
+</body>
+</html
