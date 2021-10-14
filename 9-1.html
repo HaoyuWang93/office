@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MIA-203?/??/??</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<script>
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+  <a-assets>
+    <img id="sky" src="images/ar.jpg" alt="background">
+    <img id="exit" src="images/exit.png" alt="next page">
+  </a-assets>
+
+  <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
+   <a-image id="out" class="clickable"
+      src= "#exit"
+      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+      width="0.5" height="0.5"
+      position="0 1.5 1.5"
+      rotation="0 180 0"
+      opacity=0.8
+      weblink="url: 9-0.html">
+   </a-image>
+
+   <a-text value="Welcome to OFF GRID!
+   Setting: wild-night 045
+   Temperature: 19°C
+   Humidity: 34%
+   Wind: OFF
+   Noise: OFF"
+   width="1.5" position="1 1.5 -1" rotation="0 -45 0" opacity="0.5" line-height="60"></a-text>
+
+</a-scene>
+
+</body>
+</html
