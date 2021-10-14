@@ -65,7 +65,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
     <img id="exit" src="images/exit.png" alt="next page">
     <img id="windon" src="images/wind.png" alt="">
     <img id="windoff" src="images/windoff.png" alt="">
-    <audio id="wind" src="audio/wind.wav" preload="auto"></audio>
+    <audio id="wind" src="audio/wind.wav" preload="auto" loop="true"></audio>
   </a-assets>
 
   <a-sky src="#sky" rotation="0 -90 0"></a-sky>
@@ -87,8 +87,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
    width="1.5" position="0.8 1.6 -1" rotation="0 -45 0" opacity="0.5" line-height="60"></a-text>
 
    <a-image id="sound" class="clickable" src="#windoff" position="0.9 1.25 -1" rotation="0 -45 0" opacity="0.5" width="0.2" height="0.2"
-      animation__flash="property: opacity; to: 0; dur: 1000; dir: alternate; loop: true"
-      sound="src: #wind; loop: true"
+      animation__flash="property: opacity; to: 0.25; dur: 1000; dir: alternate; loop: true"
       audiohandler></a-image>
 
 </a-scene>
