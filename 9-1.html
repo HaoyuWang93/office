@@ -35,6 +35,26 @@ z-index: 1;'>
     })
   }
 })
+
+AFRAME.registerComponent("audiohandler", {
+  init:function() {
+     let playing = false;
+     let audio = document.querySelector("#wind");
+     let sound = document.querySelector("#sound");
+     this.el.addEventListener("click", () => {
+          if(!playing) {
+              sound.setAttribute("src", "#windon");
+              audio.play();
+           } else {
+              audio.pause();
+              sound.setAttribute("src", "#windoff");
+              audio.currentTime = 0;
+           }
+           playing = !playing;
+     });
+  }
+})
+
 </script>
 
 <a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
@@ -43,6 +63,9 @@ loading-screen="dotsColor: white; backgroundColor: black">
   <a-assets>
     <img id="sky" src="images/ar.jpg" alt="background">
     <img id="exit" src="images/exit.png" alt="next page">
+    <img id="windon" src="images/wind.png" alt="">
+    <img id="windoff" src="images/windoff.png" alt="">
+    <audio id="wind" src="audio/wind.wav" preload="auto"></audio>
   </a-assets>
 
   <a-sky src="#sky" rotation="0 -90 0"></a-sky>
@@ -60,10 +83,13 @@ loading-screen="dotsColor: white; backgroundColor: black">
    <a-text value="Welcome to OFF GRID!
    Setting: wild-night 045
    Temperature: 19°C
-   Humidity: 34%
-   Wind: OFF
-   Noise: OFF"
-   width="1.5" position="1 1.5 -1" rotation="0 -45 0" opacity="0.5" line-height="60"></a-text>
+   Humidity: 34%"
+   width="1.5" position="0.8 1.6 -1" rotation="0 -45 0" opacity="0.5" line-height="60"></a-text>
+
+   <a-image id="sound" class="clickable" src="#windoff" position="0.9 1.25 -1" rotation="0 -45 0" opacity="0.5" width="0.2" height="0.2"
+      animation__flash="property: opacity; to: 0; dur: 1000; dir: alternate; loop: true"
+      sound="src: #wind; loop: true"
+      audiohandler></a-image>
 
 </a-scene>
 
